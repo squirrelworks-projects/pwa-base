@@ -1,0 +1,12 @@
+{
+  "name": "doggy",
+  "start_url": "./",
+  "display": "standalone",
+  "icons": [
+    {
+      "src": "./assets/img/dog.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
