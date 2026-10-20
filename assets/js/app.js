@@ -29,3 +29,22 @@ function getDog() {
 }
 
 
+
+
+// PUSH: spørg brugeren om lov til at vise notifikationer
+let notifyBtn = document.getElementById("notifyBtn")
+
+notifyBtn.addEventListener("click", () => {
+  Notification.requestPermission().then(permission => {
+    console.log("App: notification permission", permission)
+
+    if (permission === "granted") {
+      // Vis en test-notifikation via service workeren
+      navigator.serviceWorker.ready.then(registration => {
+        registration.showNotification("Notifikationer er slået til 🐶")
+      })
+    }
+  })
+})
+
+
