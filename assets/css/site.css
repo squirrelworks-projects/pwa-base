@@ -1,0 +1,32 @@
+
+
+body{
+    background-color: grey;
+   
+}
+
+header{
+    display: flex;
+    flex-direction: row;
+   justify-content: space-around;
+    background-color: cadetblue;
+ 
+}
+
+   #logo{
+        width: 100px;
+
+    }
+
+    #dog{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+       
+    }
+
+    #dog img{
+        margin: 2rem;
+        align-self: center;
+        width: 40%;
+    }
