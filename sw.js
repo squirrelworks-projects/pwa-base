@@ -36,18 +36,28 @@ self.addEventListener("activate", () => {
 
 
 
-// 3. FETCH: to strategier
+// 3. FETCH: to caching strategier
 //    - dog.ceo (api + billeder): NETWORK FIRST -> ny hund når vi er online, sidste hund når vi er offline
 //    - alt andet (statiske filer): CACHE FIRST
+
 self.addEventListener("fetch", (event) => {
-  console.log("Service worker: fetch", event.request.url);
+
 
   if (event.request.url.includes("dog.ceo")) {
     event.respondWith(networkFirst(event.request));
+      console.log("Service worker: network first", event.request.url);
   } else {
     event.respondWith(cacheFirst(event.request));
+          console.log("Service worker: network first", event.request.url);
   }
 });
+
+
+
+
+
+
+
 
 
 
