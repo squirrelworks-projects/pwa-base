@@ -19,6 +19,8 @@ self.addEventListener("install", (event) => {
     caches.open(CACHE).then((cache) => cache.addAll(FILES))
   
   );
+
+  
 });
 
 
@@ -84,6 +86,7 @@ function cacheFirst(request) {
 function networkFirst(request) {
   return fetch(request)
     .then((response) => {
+
       // Vi er online: gem en kopi i cachen og send svaret videre
       const copy = response.clone();
       caches.open(CACHE).then((cache) => cache.put(request, copy));
